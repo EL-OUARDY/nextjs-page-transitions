@@ -126,6 +126,29 @@
   }
 }
 
+::view-transition-new(root),
+::view-transition-old(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate !important;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2 !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1 !important;
+}
+
 #animated-text {
   font-size: 14vw;
   text-transform: uppercase;
