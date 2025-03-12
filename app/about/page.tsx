@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnimatedParagraph from "../components/AnimatedParagraph";
 
 function page() {
   return (
@@ -14,12 +15,13 @@ function page() {
         />
       </div>
       <div className="flex items-center justify-center">
-        <p className="p-8 text-xl">
+        <AnimatedParagraph className="p-8 text-xl">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quae,
           odit earum, exercitationem porro ratione eaque minima, nemo reiciendis
           totam nostrum temporibus illum impedit minus eius consequatur sint
-          quasi amet!
-        </p>
+          quasi amet! Iste ipsam neque consequuntur officia, ex inventore ad
+          assumenda necessitatibus non, cumque quo.
+        </AnimatedParagraph>
       </div>
     </div>
   );

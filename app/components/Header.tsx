@@ -34,7 +34,7 @@ function Header() {
   }
 
   return (
-    <div className="fixed top-0 z-1 flex w-full px-4 pt-4">
+    <div className="fixed top-0 z-1 flex w-full px-4 pt-4 font-mono">
       <Link
         href="/"
         onClick={(e) => {

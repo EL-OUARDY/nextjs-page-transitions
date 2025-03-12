@@ -30,7 +30,7 @@ export default function RootLayout({
       <ReactLenis root>
         <html
           lang="en"
-          className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <body>
             <Header />
