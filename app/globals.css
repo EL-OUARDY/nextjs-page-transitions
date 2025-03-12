@@ -126,6 +126,35 @@
   }
 }
 
+/* Custom scroll bar */
+body {
+  --sb-track-color: var(--background);
+  --sb-thumb-color: var(--muted-foreground);
+  --sb-size: 4px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+
+/* This CSS file defines styles for view transitions */
 ::view-transition-new(root),
 ::view-transition-old(root) {
   animation: none !important;
@@ -149,6 +178,7 @@
   z-index: 1 !important;
 }
 
+/*  */
 .animated-title,
 .animated-paragrapgh .line {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)

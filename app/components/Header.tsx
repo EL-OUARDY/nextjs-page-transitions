@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useTransitionRouter } from "next-view-transitions";
+import { usePathname } from "next/navigation";
 
 function Header() {
   const router = useTransitionRouter();
+  const pathname = usePathname();
 
   function slideInOut() {
     document.documentElement.animate(
@@ -43,7 +45,7 @@ function Header() {
             onTransitionReady: slideInOut,
           });
         }}
-        className="flex-1"
+        className={`flex-1 ${pathname === "/about" && "text-primary-foreground"}`}
       >
         <h2 className="">/Home</h2>
       </Link>
