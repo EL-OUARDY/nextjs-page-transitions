@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { ViewTransitions } from "next-view-transitions";
+import { ReactLenis } from "lenis/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html
-        lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
-      >
-        <body>
-          <Header />
-          {children}
-        </body>
-      </html>
+      <ReactLenis root>
+        <html
+          lang="en"
+          className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
+        >
+          <body>
+            <Header />
+            {children}
+          </body>
+        </html>
+      </ReactLenis>
     </ViewTransitions>
   );
 }
