@@ -45,7 +45,7 @@ function Header() {
             onTransitionReady: slideInOut,
           });
         }}
-        className={`flex-1 ${pathname === "/about" && "text-primary-foreground"}`}
+        className={`flex-1 ${pathname === "/about" && "text-primary-foreground dark:text-foreground"}`}
       >
         <h2 className="">/Home</h2>
       </Link>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AnimatedParagraph from "../components/AnimatedParagraph";
+import AnimatedParagraph from "../../components/AnimatedParagraph";
 
 function page() {
   return (

@@ -1,4 +1,4 @@
-import AnimatedTitle from "./components/AnimatedTitle";
+import AnimatedTitle from "../components/AnimatedTitle";
 
 export default function Home() {
   return (
