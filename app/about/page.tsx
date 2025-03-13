@@ -9,9 +9,10 @@ function page() {
           src="/7.jpg"
           alt="About Us"
           fill
-          objectFit="cover"
+          sizes="100vw"
           quality={100}
           priority
+          className="object-cover"
         />
       </div>
       <div className="flex items-center justify-center">
@@ -20,7 +21,7 @@ function page() {
           odit earum, exercitationem porro ratione eaque minima, nemo reiciendis
           totam nostrum temporibus illum impedit minus eius consequatur sint
           quasi amet! Iste ipsam neque consequuntur officia, ex inventore ad
-          assumenda necessitatibus non, cumque quo.
+          assumenda necessitatibus non, cumque quo facilisis.
         </AnimatedParagraph>
       </div>
     </div>

@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import { ViewTransitions } from "next-view-transitions";
 import { ReactLenis } from "lenis/react";
 import { ThemeProvider } from "../components/providers/theme-provider";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
             >
               <Header />
               {children}
+              <ThemeSwitcher />
             </ThemeProvider>
           </body>
         </html>

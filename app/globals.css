@@ -124,6 +124,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  *::selection {
+    background-color: var(--secondary);
+    color: var(--foreground);
+  }
 }
 
 /* Custom scroll bar */
