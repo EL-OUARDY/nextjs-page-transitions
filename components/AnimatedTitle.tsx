@@ -19,6 +19,13 @@ function AnimatedTitle({ children, className }: Props) {
       // Split the text into individual characters
       const text = new splitType("h1.animated-title", { types: "chars" });
 
+      // Apply custom styles to each character
+      gsap.utils.toArray(text.chars).forEach((char) => {
+        const element = char as HTMLElement;
+        element.style.position = "relative";
+        element.style.willChange = "transform";
+      });
+
       // Set the initial position of each character to be off-screen (y: 400)
       gsap.set(text.chars, { y: 400 });
 
@@ -35,7 +42,13 @@ function AnimatedTitle({ children, className }: Props) {
   );
 
   return (
-    <h1 className={`animated-title ${className}`} ref={textRef}>
+    <h1
+      className={`animated-title ${className}`}
+      ref={textRef}
+      style={{
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      }}
+    >
       {children}
     </h1>
   );

@@ -182,15 +182,3 @@ body::-webkit-scrollbar-thumb {
 ::view-transition-old(root) {
   z-index: 1 !important;
 }
-
-/* Animated texts */
-.animated-title,
-.animated-paragrapgh .line {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
-}
-
-.animated-title .char,
-.animated-paragrapgh .line span {
-  position: relative;
-  will-change: transform;
-}
