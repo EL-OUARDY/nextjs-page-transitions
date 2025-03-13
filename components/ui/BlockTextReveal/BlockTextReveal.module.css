@@ -1,0 +1,51 @@
+.blockTextReveal {
+  color: var(--background);
+  display: inline;
+  animation: textAppear 0.0001s linear forwards;
+  animation-delay: 1.5s;
+  position: relative;
+  visibility: hidden;
+}
+
+.blockTextReveal::after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: var(--primary);
+  animation: revealBlock 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1s;
+}
+
+@keyframes textAppear {
+  0% {
+    color: var(--background);
+    visibility: visible;
+
+  }
+
+  100% {
+    color: inherit;
+  }
+}
+
+@keyframes revealBlock {
+  0% {
+    left: 0;
+    width: 0%;
+    visibility: visible;
+
+  }
+
+  50% {
+    left: 0%;
+    width: 100%
+  }
+
+  100% {
+    left: 100%;
+    width: 0%
+  }
+}
