@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useId, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import splitType from "split-type";
@@ -13,11 +13,12 @@ gsap.registerPlugin(useGSAP);
 
 function AnimatedParagraph({ children, className }: Props) {
   const textRef = useRef(null);
+  const uniqueId = useId();
 
   useGSAP(
     () => {
       // Split the text into lines and wrap each line in a div with class "line"
-      const text = new splitType("p.animated-paragrapgh", {
+      const text = new splitType(`#${uniqueId}`, {
         types: "lines",
         tagName: "div",
         lineClass: "line",
@@ -34,13 +35,13 @@ function AnimatedParagraph({ children, className }: Props) {
       });
 
       // Set initial position of each span to be 400px down and display as block
-      gsap.set("p.animated-paragrapgh .line span", {
+      gsap.set(`#${uniqueId} .line span`, {
         y: 400,
         display: "block",
       });
 
       // Animate each span to move to its original position with a staggered effect
-      gsap.to("p.animated-paragrapgh .line span", {
+      gsap.to(`#${uniqueId} .line span`, {
         y: 0, // Final position
         duration: 2, // Duration of the animation
         stagger: 0.075, // Delay between each character's animation
@@ -58,7 +59,9 @@ function AnimatedParagraph({ children, className }: Props) {
 
   return (
     <div ref={textRef}>
-      <p className={`animated-paragrapgh ${className}`}>{children}</p>
+      <p id={uniqueId} className={className}>
+        {children}
+      </p>
     </div>
   );
 }

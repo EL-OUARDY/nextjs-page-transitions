@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useId, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import splitType from "split-type";
@@ -13,11 +13,12 @@ gsap.registerPlugin(useGSAP);
 
 function AnimatedTitle({ children, className }: Props) {
   const textRef = useRef(null);
+  const uniqueId = useId();
 
   useGSAP(
     () => {
       // Split the text into individual characters
-      const text = new splitType("h1.animated-title", { types: "chars" });
+      const text = new splitType(`#${uniqueId}`, { types: "chars" });
 
       // Apply custom styles to each character
       gsap.utils.toArray(text.chars).forEach((char) => {
@@ -43,8 +44,9 @@ function AnimatedTitle({ children, className }: Props) {
 
   return (
     <h1
-      className={`animated-title ${className}`}
       ref={textRef}
+      id={uniqueId}
+      className={className}
       style={{
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       }}
