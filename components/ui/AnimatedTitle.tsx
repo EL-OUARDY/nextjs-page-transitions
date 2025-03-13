@@ -28,7 +28,7 @@ function AnimatedTitle({ children, className }: Props) {
       });
 
       // Set the initial position of each character to be off-screen (y: 400)
-      gsap.set(text.chars, { y: 400 });
+      gsap.set(text.chars, { y: 400, visibility: "visible" });
 
       // Animate the characters to their final position (y: 0)
       gsap.to(text.chars, {
@@ -46,7 +46,7 @@ function AnimatedTitle({ children, className }: Props) {
     <h1
       ref={textRef}
       id={uniqueId}
-      className={className}
+      className={`invisible ${className}`}
       style={{
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       }}

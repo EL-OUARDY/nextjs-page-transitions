@@ -7,11 +7,12 @@ import splitType from "split-type";
 interface Props {
   children: ReactNode;
   className?: string;
+  delay?: number;
 }
 
 gsap.registerPlugin(useGSAP);
 
-function AnimatedParagraph({ children, className }: Props) {
+function AnimatedParagraph({ children, className, delay = 0.25 }: Props) {
   const textRef = useRef(null);
   const uniqueId = useId();
 
@@ -38,6 +39,7 @@ function AnimatedParagraph({ children, className }: Props) {
       gsap.set(`#${uniqueId} .line span`, {
         y: 400,
         display: "block",
+        visibility: "visible",
       });
 
       // Animate each span to move to its original position with a staggered effect
@@ -46,7 +48,7 @@ function AnimatedParagraph({ children, className }: Props) {
         duration: 2, // Duration of the animation
         stagger: 0.075, // Delay between each character's animation
         ease: "power4.out", // Easing function for the animation
-        delay: 0.25, // Delay before the animation starts
+        delay: delay, // Delay before the animation starts
       });
 
       // Cleanup function to revert the split text when the component unmounts
@@ -59,7 +61,7 @@ function AnimatedParagraph({ children, className }: Props) {
 
   return (
     <div ref={textRef}>
-      <p id={uniqueId} className={className}>
+      <p id={uniqueId} className={`invisible ${className}`}>
         {children}
       </p>
     </div>

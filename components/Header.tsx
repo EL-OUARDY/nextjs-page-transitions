@@ -36,20 +36,22 @@ function Header() {
   }
 
   return (
-    <div className="fixed top-0 z-1 flex w-full px-4 pt-4 font-mono">
-      <Link
-        href="/"
-        onClick={(e) => {
-          e.preventDefault();
-          router.push("/", {
-            onTransitionReady: slideInOut,
-          });
-        }}
-        className={`flex-1 ${pathname === "/about" && "text-primary-foreground dark:text-foreground"}`}
-      >
-        <h2 className="">/Home</h2>
-      </Link>
-      <div className="flex space-x-4 text-sm uppercase">
+    <div className="fixed top-0 z-1 flex w-full px-4 pt-4 font-mono text-sm uppercase">
+      <div className="flex-1">
+        <Link
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            router.push("/", {
+              onTransitionReady: slideInOut,
+            });
+          }}
+          className={`inline w-fit hover:underline ${pathname === "/about" && "text-primary-foreground dark:text-foreground"}`}
+        >
+          /Home
+        </Link>
+      </div>
+      <div className="flex space-x-4">
         <Link
           href="/work"
           onClick={(e) => {
@@ -61,6 +63,18 @@ function Header() {
           className="hover:underline"
         >
           Work
+        </Link>
+        <Link
+          href="/story"
+          onClick={(e) => {
+            e.preventDefault();
+            router.push("/story", {
+              onTransitionReady: slideInOut,
+            });
+          }}
+          className="hover:underline"
+        >
+          Story
         </Link>
         <Link
           href="/about"

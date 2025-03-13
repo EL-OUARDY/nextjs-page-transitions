@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AnimatedParagraph from "../../components/AnimatedParagraph";
+import AnimatedParagraph from "../../components/ui/AnimatedParagraph";
 
 function page() {
   return (
@@ -15,7 +15,7 @@ function page() {
           className="object-cover"
         />
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <AnimatedParagraph className="p-8 text-xl">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quae,
           odit earum, exercitationem porro ratione eaque minima, nemo reiciendis
