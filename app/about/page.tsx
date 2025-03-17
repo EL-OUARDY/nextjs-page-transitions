@@ -6,7 +6,7 @@ function page() {
     <div className="grid h-screen grid-cols-2">
       <div className="relative h-full w-full">
         <Image
-          src="/7.jpg"
+          src="/img/7.jpg"
           alt="About Us"
           fill
           sizes="100vw"
