@@ -89,16 +89,16 @@ function Header() {
           About
         </Link>
         <Link
-          href="/contact"
+          href="/test"
           onClick={(e) => {
             e.preventDefault();
-            router.push("/contact", {
+            router.push("/test", {
               onTransitionReady: slideInOut,
             });
           }}
           className="hover:underline"
         >
-          Contact
+          Test
         </Link>
       </div>
     </div>
